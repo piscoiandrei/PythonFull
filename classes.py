@@ -17,5 +17,15 @@ class MyClass:
         self.var2 = var2
         MyClass.num_of_instances += 1
 
+    # regular method / instance method
     def myfunc(self):  # self is automatically included because that's python
         self.var1 = "dummy text" + self.class_var
+
+    @classmethod  # decorator
+    def a_class_method(cls, random_argument):  # call like this : MyClass.a_class_method(args)
+        cls.class_var += "add this text"
+
+    @classmethod
+    def alternative_constructor(cls, rand_string):  # in case we receive some data that needs to be processed
+        tpl = rand_string.split('-')                # before we create the object
+        return cls(tpl[0], tpl[1])

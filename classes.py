@@ -82,5 +82,5 @@ class Manager(Employee):
             self.employees.remove(emp)
 
     def print_emp(self):
-        for index, e in enumerate(self.employees):
-            print(index, " ", e.full_name())
+        for i, e in enumerate(self.employees):
+            print(i, " ", e.full_name())

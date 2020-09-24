@@ -6,6 +6,7 @@ class MyClass:
     # e.g. keeping track of how many instances of the class there are
     class_var = "this is a class variable"
     num_of_instances = 0
+
     # a class variable can not be acceses in a function normally, class_var = "something"
     # it has to be accessed either by a class instance or by the class name
     # self.class_var   OR    MyClass.class_var
@@ -29,7 +30,7 @@ class MyClass:
 
     @classmethod  # instance1 = MyClass.alternative_constructor(args)
     def alternative_constructor(cls, rand_string):  # in case we receive some data that needs to be processed
-        tpl = rand_string.split('-')                # before we create the object,
+        tpl = rand_string.split('-')  # before we create the object,
         return cls(tpl[0], tpl[1])
 
     @staticmethod  # used when you dont access the instance on the class
@@ -44,7 +45,7 @@ class MyClass:
 # to find out the method resolution order: print(help(class_name))
 class Employee:
 
-    def __init__(self, first_name, last_name, salary):
+    def __init__(self, first_name="", last_name="", salary=0):
         self.first_name = first_name
         self.last_name = last_name
         self.salary = salary
@@ -59,14 +60,14 @@ class Employee:
 
 class Developer(Employee):
 
-    def __init__(self, first_name, last_name, salary, prog_lang):
+    def __init__(self, first_name="", last_name="", salary=0, prog_lang=""):
         super().__init__(first_name, last_name, salary)  # calling the parent constructor
         self.prog_lang = prog_lang  # handling what is left
 
 
 class Manager(Employee):
 
-    def __init__(self, first_name, last_name, salary, employees=None):
+    def __init__(self, first_name="", last_name="", salary=0, employees=None):
         super().__init__(first_name, last_name, salary)
         if employees is None:
             self.employees = []
@@ -84,3 +85,11 @@ class Manager(Employee):
     def print_emp(self):
         for i, e in enumerate(self.employees):
             print(i, " ", e.full_name())
+
+
+# TODO classes tricks
+
+'''
+mg = Manager()
+isinstance(mg, Employee) - true 
+issubclass(Manager, Developer) - false'''  # isinstance(), verifies if an object is an instance of the class

@@ -25,7 +25,13 @@ class MyClass:
     def a_class_method(cls, random_argument):  # call like this : MyClass.a_class_method(args)
         cls.class_var += "add this text"
 
-    @classmethod
+    @classmethod  # instance1 = MyClass.alternative_constructor(args)
     def alternative_constructor(cls, rand_string):  # in case we receive some data that needs to be processed
-        tpl = rand_string.split('-')                # before we create the object
+        tpl = rand_string.split('-')                # before we create the object,
         return cls(tpl[0], tpl[1])
+
+    @staticmethod  # used when you dont access the instance on the class
+    def is_too_large(my_string):  # does not take 'self' or 'cls' as arguments
+        if len(my_string) > 13:
+            return True
+        return False

@@ -12,3 +12,7 @@ e1.apply_raise(0.1)
 
 print(e1.salary)
 print(d1.salary)
+
+mgr1 = Manager("Maica", "Tereza", [d1, e1])
+
+mgr1.print_emp()

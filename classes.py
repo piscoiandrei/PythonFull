@@ -65,4 +65,22 @@ class Developer(Employee):
 
 
 class Manager(Employee):
-    pass
+
+    def __init__(self, first_name, last_name, salary, empployees=None):
+        super().__init__(first_name, last_name, salary)
+        if empployees is None:
+            self.empployees = []
+        else:
+            self.employees = empployees
+
+    def add_employee(self, emp):
+        if emp not in self.empployees:
+            self.empployees.append(emp)
+
+    def remove_employee(self, emp):
+        if emp in self.empployees:
+            self.empployees.remove(emp)
+
+    def print_emp(self):
+        for index, e in enumerate(self.empployees):
+            print(index, " ", e.full_name())

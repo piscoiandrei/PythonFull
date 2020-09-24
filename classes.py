@@ -1,3 +1,5 @@
+# TODO classes basic
+
 class MyClass:
     # class variables,
     # use them as 'global' or 'static' fields for the class,(e.g), otherwise just use attributes(instance variables)
@@ -35,3 +37,32 @@ class MyClass:
         if len(my_string) > 13:
             return True
         return False
+
+
+# TODO  subclasses aka inheritance
+
+# to find out the method resolution order: print(help(class_name))
+class Employee:
+
+    def __init__(self, first_name, last_name, salary):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.salary = salary
+        self.email = r'{}.{}@email.com'.format(first_name, last_name)
+
+    def full_name(self):
+        return self.first_name + " " + self.last_name
+
+    def apply_raise(self, raise_amount):
+        self.salary = int(self.salary * raise_amount)
+
+
+class Developer(Employee):
+
+    def __init__(self, first_name, last_name, salary, prog_lang):
+        super().__init__(first_name, last_name, salary)  # calling the parent constructor
+        self.prog_lang = prog_lang  # handling what is left
+
+
+class Manager(Employee):
+    pass

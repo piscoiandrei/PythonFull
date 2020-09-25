@@ -143,7 +143,6 @@ class City:
         self.__pib = city_pib
 
     # getters and setters
-
     @property
     def name(self):
         return self.__name
@@ -183,15 +182,29 @@ class City:
             raise Exception("value should be an integer, your value was: {}".format(value))
 
     # other magic functions
-
     def __str__(self):
         return self.name + " " + self.location + " " + str(self.population) + " " + str(self.pib)
+
+    def __repr__(self):
+        return "City('{}', '{}', {}, {})".format(self.name, self.location, self.population, self.pib)
+
+    # overloading operators
+
+    def __add__(self, other):  # adds populations
+        if isinstance(other, City) is True:
+            return City(city_population=self.__population + other.__population, city_pib=self.__pib + other.__pib)
+        return NotImplemented
+
+    def __sub__(self, other):
+        if isinstance(other, City) is True:
+            return City(city_population=self.__population - other.__population, city_pib=self.__pib - other.__pib)
+        return NotImplemented
 
 # TODO classes tricks, and important observations
 
 '''
 mg = Manager()
-isinstance(mg, Employee) - true 
+isinstance(mg, Employee'# or Manager') - true 
 issubclass(Manager, Developer) - false'''  # isinstance(), verifies if an object is an instance of the class
 
 '''

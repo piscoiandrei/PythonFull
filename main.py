@@ -7,5 +7,5 @@ c2 = eval(repr(c))
 print(type(c))
 print(type(c1))
 
-print(c+c1)
+print(c + c1)
 print(c.population)

@@ -33,12 +33,29 @@ class MyClass:
         tpl = rand_string.split('-')  # before we create the object,
         return cls(tpl[0], tpl[1])
 
-    @staticmethod  # used when you dont access the instance on the class
+    @staticmethod  # used when you don't access the instance of the class
     def is_too_large(my_string):  # does not take 'self' or 'cls' as arguments
         if len(my_string) > 13:
             return True
         return False
 
+    # todo getters, setters and deleters
+
+    # GETTER
+    @property
+    def custom_info(self):   # defining 'custom_info' like it's a method, we can access it like an attribute
+        return '{},{}'.format(self.var1, self.var2)  # instance1.custom_info
+
+    # SETTER
+    @custom_info.setter
+    def custom_info(self, value):
+        self.var1, self.var2 = value.split(' ')
+
+    # DELETER
+    @custom_info.deleter
+    def custom_info(self):
+        self.var1 = None
+        self.var2 = None
 
 # TODO  subclasses aka inheritance
 
@@ -74,7 +91,7 @@ class Manager(Employee):
         else:
             self.employees = employees
 
-    def add_employee(self, emp):
+    def add_employee(self, emp):  # you can also add Developer as an employee
         if emp not in self.employees:
             self.employees.append(emp)
 
@@ -87,10 +104,14 @@ class Manager(Employee):
             print(i, " ", e.full_name())
 
 
-# TODO magic methods and overloading
+# TODO basic magic methods
 
 # dir(class_name)  returns the magic methods inherited by a class
 class Entity:
+
+    # calling magic methods
+    # instance.__magicMethod__()
+    # magicMethod(instance)
 
     def __init__(self, name="", code="", location=""):
         self.name = name
@@ -103,13 +124,26 @@ class Entity:
         return "Entity('{}', '{}', '{}')".format(self.name, self.code, self.location)
         # instance2 = eval(instance1.__repr__())
 
-    def __str__(self):
+    def __str__(self):  # the instance uses __str__ over __repr__, when calling print(instance1), __str__ will be used
         return "{} - {}".format(self.name, self.location)
 
+    def __len__(self):  # "length" of instance, or whatever you want to get when calling len(instance1)
+        return len(self.code)
 
-# TODO classes tricks
+# TODO Operator Overloading
+
+
+
+# TODO classes tricks, and important observations
 
 '''
 mg = Manager()
 isinstance(mg, Employee) - true 
 issubclass(Manager, Developer) - false'''  # isinstance(), verifies if an object is an instance of the class
+
+'''
+ def myfunc( other_items,*args, **kwargs)
+ # *args takes an arbitrary number of arguments 
+ # **kwargs takes an arbitrary number of keyword arguments
+ // you don't have to call them args and kwargs, * and ** do the 'magic'
+'''

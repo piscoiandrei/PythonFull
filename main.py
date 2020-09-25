@@ -24,3 +24,8 @@ print(mgr1.email)
 mgr1.remove_employee(e1)
 mgr1.print_emp()
 
+ent1 = Entity("Name1", "XVAL-961", "Earth")
+ent2 = eval(ent1.__repr__())
+print(ent1)
+print(ent2)
+

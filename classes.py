@@ -87,6 +87,26 @@ class Manager(Employee):
             print(i, " ", e.full_name())
 
 
+# TODO magic methods and overloading
+
+# dir(class_name)  returns the magic methods inherited by a class
+class Entity:
+
+    def __init__(self, name="", code="", location=""):
+        self.name = name
+        self.code = code
+        self.location = location
+
+    # unambiguous representation of the object
+    def __repr__(self):  # meant to be seen by other developers, and used for logging and debugging
+        # something that we can use to recreate the object in Python code
+        return "Entity('{}', '{}', '{}')".format(self.name, self.code, self.location)
+        # instance2 = eval(instance1.__repr__())
+
+    def __str__(self):
+        return "{} - {}".format(self.name, self.location)
+
+
 # TODO classes tricks
 
 '''

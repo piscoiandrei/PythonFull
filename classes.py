@@ -200,6 +200,11 @@ class City:
             return City(city_population=self.__population - other.__population, city_pib=self.__pib - other.__pib)
         return NotImplemented
 
+    # ETC INSERT ANOTHER TIME OTHER OPERATORS IF U WANT
+    # ...
+    # ...
+    # ...
+
 # TODO classes tricks, and important observations
 
 '''

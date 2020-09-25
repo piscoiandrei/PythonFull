@@ -16,7 +16,7 @@ class MyClass:
 
     def __init__(self, var1, var2):  # init = constructor
         # instance variables / attributes
-        self.var1 = var1
+        self.var1 = var1  # self._var1 - protected attribute, self.__var1 - private attribute
         self.var2 = var2
         MyClass.num_of_instances += 1
 
@@ -43,7 +43,7 @@ class MyClass:
 
     # GETTER
     @property
-    def custom_info(self):   # defining 'custom_info' like it's a method, we can access it like an attribute
+    def custom_info(self):  # defining 'custom_info' like it's a method, we can access it like an attribute
         return '{},{}'.format(self.var1, self.var2)  # instance1.custom_info
 
     # SETTER
@@ -54,8 +54,8 @@ class MyClass:
     # DELETER
     @custom_info.deleter
     def custom_info(self):
-        self.var1 = None
-        self.var2 = None
+        self.custom_info = None
+
 
 # TODO  subclasses aka inheritance
 
@@ -130,9 +130,62 @@ class Entity:
     def __len__(self):  # "length" of instance, or whatever you want to get when calling len(instance1)
         return len(self.code)
 
-# TODO Operator Overloading
 
+# TODO Operator Overloading + Full Class That does something
 
+class City:
+
+    # constructor                                                         // PIB e pe romana pt ca da
+    def __init__(self, city_name="", city_location="", city_population=0, city_pib=0):
+        self.__name = city_name
+        self.__location = city_location
+        self.__population = city_population
+        self.__pib = city_pib
+
+    # getters and setters
+
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, value):
+        self.__name = str(value)
+
+    @property
+    def location(self):
+        return self.__location
+
+    @location.setter
+    def location(self, value):
+        self.__name = str(value)
+
+    @property
+    def population(self):
+        return self.__population
+
+    @population.setter
+    def population(self, value):
+        try:
+            self.__population = int(value)
+        except ValueError:
+            raise Exception("value should be an integer, your value was: {}".format(value))
+
+    @property
+    def pib(self):
+        return self.__pib
+
+    @pib.setter
+    def pib(self, value):
+        try:
+            self.__pib = int(value)
+        except ValueError:
+            raise Exception("value should be an integer, your value was: {}".format(value))
+
+    # other magic functions
+
+    def __str__(self):
+        return self.name + " " + self.location + " " + str(self.population) + " " + str(self.pib)
 
 # TODO classes tricks, and important observations
 

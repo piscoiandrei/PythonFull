@@ -1,23 +1,5 @@
 from classes import *
 
-e1 = Employee("Valentin", "Ancau", 200)
+c = City("JHGQd", "fwef", 123, 13)
 
-d1 = Developer("Andrei", "Piscoi", 1300000099, "Python")
-
-print(e1.email)
-print(d1.email)
-
-d1.apply_raise(10)
-e1.apply_raise(0.1)
-
-print(e1.salary)
-print(d1.salary)
-print("\n")
-
-mgr1 = Manager("Maica", "Tereza", 1, [d1])
-
-mgr1.add_employee(e1)
-temp = mgr1.employees[0]
-
-print(temp)
-
+print(c.name)

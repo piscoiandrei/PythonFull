@@ -1,2 +1,2 @@
-from dictionaries import func_dictionaries
-func_dictionaries()
+from sets import func_sets
+func_sets()

@@ -1,2 +1,2 @@
-from sets import func_sets
-func_sets()
+from strings import func_strings
+func_strings()

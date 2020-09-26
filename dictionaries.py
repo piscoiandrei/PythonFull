@@ -32,6 +32,8 @@ def func_dictionaries():
     for key, value in zip(my_dict.keys(), my_dict.values()):
         print(key, " ", value)
 
+    print(my_dict.items())  # .items() returns all key-value pairs
+
     # copying  DONT USE '='
     dict1 = my_dict.copy()
 

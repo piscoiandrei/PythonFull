@@ -1,3 +1,3 @@
-from lists import func_lists
+from tuples import func_tuples
 
-func_lists()
+func_tuples()

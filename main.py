@@ -1,3 +1,2 @@
-from tuples import func_tuples
-
-func_tuples()
+from dictionaries import func_dictionaries
+func_dictionaries()

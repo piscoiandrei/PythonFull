@@ -1,71 +1,73 @@
 # Lists: ordered, mutable, allows duplicate items
-def func_lists():
-    # creating a empty list
-    my_list = list()
 
-    # creating a list, interesting way
-    # my_list = a_list * number_of_repetitons
-    my_list = [0, "123", 21] * 5
-    print(my_list)
+# creating a empty list
+my_list = list()
 
-    # init a list
-    my_list = ["string", 102, 0.132, "yes", False]
-    print(my_list)
+# creating a list, interesting way
+# my_list = a_list * number_of_repetitons
+my_list = [0, "123", 21] * 5
+print(my_list)
 
-    # accessing last item
-    item = my_list[-1]  # -2 = penultimul si etc
+# init a list
+my_list = ["string", 102, 0.132, "yes", False]
+print(my_list)
 
-    # traversal
-    for i, x in enumerate(my_list):
-        print(i, ' ', x)
-    # for(int i = my_list.size() - 1; i >= 0; i--)
-    #     out<<my_list[i]<<'\n'
-    for i in range(len(my_list) - 1, -1, -1):  # backwards
-        print(my_list[i])
+# accessing last item
+item = my_list[-1]  # -2 = penultimul si etc
 
-    # list1 = another_list[start_index, stop_index], stop_index excluded
-    l2 = my_list[1:3]  # = list[1], list[2]
-    l3 = my_list[:4]  # start_index = 0
-    l4 = my_list[2:]  # stop_index = end of list
-    # this is the step_index aka how many steps it takes on each iteration
-    l5 = my_list[::1]
+# traversal
+for i, x in enumerate(my_list):
+    print(i, ' ', x)
+# for(int i = my_list.size() - 1; i >= 0; i--)
+#     out<<my_list[i]<<'\n'
+for i in range(len(my_list) - 1, -1, -1):  # backwards
+    print(my_list[i])
 
-    # reverse a list
-    my_list.reverse()
-    another_list = my_list[::-1]
+# list1 = another_list[start_index, stop_index], stop_index excluded
+l2 = my_list[1:3]  # = list[1], list[2]
+l3 = my_list[:4]  # start_index = 0
+l4 = my_list[2:]  # stop_index = end of list
+# this is the step_index aka how many steps it takes on each iteration
+l5 = my_list[::1]
 
-    # add items
-    my_list.append("fwef")  # adds element at the end
-    my_list.append(["f182", "wfhei", "1023k", 239])  # appends list at the end
+# reverse a list
+my_list.reverse()
+another_list = my_list[::-1]
 
-    # lists can be concatenated with the + operator
-    my_list = [0, 123, 19, "fwef"] + [0, 1, 1, 1, 214, "l"]
+# add items
+my_list.append("fwef")  # adds element at the end
+my_list.append(["f182", "wfhei", "1023k", 239])  # appends list at the end
 
-    # inserts at position i, and shifts all the elements from i to i+1
-    my_list.insert(1, "blueberry")
+# lists can be concatenated with the + operator
+my_list = [0, 123, 19, "fwef"] + [0, 1, 1, 1, 214, "l"]
 
-    # delete element
-    my_list.pop()  # returns last item and removes it
-    my_list.remove("blueberry")
-    my_list.clear()  # deletes all elements
+# inserts at position i, and shifts all the elements from i to i+1
+my_list.insert(1, "blueberry")
 
-    # sorting
-    my_list.sort(reverse=False)  # implicit reverse=False
-    new_list = sorted(my_list, reverse=False)  # or True
+# delete element
+my_list.pop()  # returns last item and removes it
+my_list.remove("blueberry")
+my_list.clear()  # deletes all elements
 
-    # copying
-    # NOT GOOD, BOTH LISTS WILL REFER TO THE SAME LOCATION IN MEMORY
-    # AKA u modify one, its going to modify the other aswell
-    my_list = another_list  # BAD METHOD!!!!!!
+# sorting
+my_list.sort(reverse=False)  # implicit reverse=False
+new_list = sorted(my_list, reverse=False)  # or True
 
-    # todo GOOD METHOD OF COPYING
-    my_list = another_list.copy()
-    my_list = list(another_list)
-    my_list = another_list[:]
+# copying
+# NOT GOOD, BOTH LISTS WILL REFER TO THE SAME LOCATION IN MEMORY
+# AKA u modify one, its going to modify the other aswell
+my_list = another_list  # BAD METHOD!!!!!!
 
-    # trick
+# todo GOOD METHOD OF COPYING
+my_list = another_list.copy()
+my_list = list(another_list)
+my_list = another_list[:]
 
-    my_list = [1, 2, 3, 4, 5]
-    # expression then for
-    sq_list = [x*x for x in my_list]
-    print(sq_list)
+# trick
+
+my_list = [1, 2, 3, 4, 5]
+# expression then for
+sq_list = [x * x for x in my_list]
+print(sq_list)
+another_list = [x * 3 for x in my_list if x % 2 == 0]  # adds evens to list
+print(another_list)

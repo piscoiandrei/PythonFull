@@ -1,10 +1,3 @@
-from classes import *
+from lists import func_lists
 
-c = City("JHGQd", "fwef", 123, 13)
-
-c1 = eval(c.__repr__())
-c2 = eval(repr(c))
-print(type(c))
-print(type(c1))
-
-c1 = c2
+func_lists()

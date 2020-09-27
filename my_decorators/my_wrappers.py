@@ -6,7 +6,9 @@ def timer(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         start = time.time()
+
         ret_val = func(*args, **kwargs)
+
         total = time.time() - start
         print("Execution time: ", total)
         return ret_val

@@ -37,6 +37,7 @@ another_list = my_list[::-1]
 # add items
 my_list.append("fwef")  # adds element at the end
 my_list.append(["f182", "wfhei", "1023k", 239])  # appends list at the end
+# but will not separate the elements, it will become a nested list
 
 # lists can be concatenated with the + operator
 my_list = [0, 123, 19, "fwef"] + [0, 1, 1, 1, 214, "l"]

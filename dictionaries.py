@@ -1,4 +1,6 @@
 # Dictionary: key-value pair, unordered, mutable
+my_dict = {**dict(), **dict()}  # merging dictionaries into my_dict
+
 my_dict = {
     "name": "Max",
     "age": 28,

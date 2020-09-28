@@ -7,6 +7,7 @@ my_list = list()
 # my_list = a_list * number_of_repetitons
 my_list = [0, "123", 21] * 5
 print(my_list)
+my_list = [*tuple(), *set(), *list]  # unpacking stuff into the list
 
 # init a list
 my_list = ["string", 102, 0.132, "yes", False]

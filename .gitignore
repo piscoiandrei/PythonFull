@@ -1,0 +1,14 @@
+
+.idea/.gitignore
+.idea/PythonFull.iml
+.idea/codeStyles/
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+__pycache__/
+_async/__pycache__/
+multiprocessing_and_threading/__pycache__/
+my_decorators/__pycache__/
+venv/
+venv library root/

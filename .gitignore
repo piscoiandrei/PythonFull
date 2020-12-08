@@ -12,3 +12,4 @@ multiprocessing_and_threading/__pycache__/
 my_decorators/__pycache__/
 venv/
 venv library root/
+!/_async/

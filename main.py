@@ -8,9 +8,3 @@ cpy = copy.deepcopy(obj1)  # used for nested stuff or normal
 # copy.deepcopy() can be used on any object
 
 """
-from context_mgrs import *
-
-with ManagedFile("text.txt") as my_file:
-    print("do somethingggg")
-    my_file.write("some textfgergerger")
-    my_file.wrong()

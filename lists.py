@@ -28,8 +28,9 @@ for i in range(len(my_list) - 1, -1, -1):  # backwards
 l2 = my_list[1:3]  # = list[1], list[2]
 l3 = my_list[:4]  # start_index = 0
 l4 = my_list[2:]  # stop_index = end of list
+l5 = my_list[-13:]  # get last n (13) elements
 # this is the step_index aka how many steps it takes on each iteration
-l5 = my_list[::1]
+l6 = my_list[::1]
 
 # reverse a list
 my_list.reverse()

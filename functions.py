@@ -50,3 +50,45 @@ def foo2(a_list):
 
     a_list.append(1029)  # this will modify the original list unless you
     # rebind the reference
+
+
+"""
+You can specify the type of an argument by using:
+my_arg_name: type
+
+To assign a default value:
+my_arg_name: type = __my_data_type__
+
+"""
+
+
+# specify what type the function returns with '->', doesn't impact code
+def some_foo(my_list: list, index: int, name: str = "") -> None:
+    pass
+
+
+"""
+Use the 'typing' import in order to specify argument types even more clearly
+"""
+
+"""
+***
+
+With the typing module comes with a pretty comprehensive collection of type hints, including:
+
+List, Tuple, Set, Map - for list, tuple, set and map respectively.
+Iterable - useful for generators.
+Any - when it could be anything.
+Union - when it could be anything within a specified set of types, as opposed to Any.
+Optional - when it might be None. Shorthand for Union[T, None].
+TypeVar - used with generics.
+Callable - used primarily for functions, but could be used for other callables.
+
+***
+"""
+
+from typing import List, Tuple
+
+
+def my_foo(some_list: List[str], t: Tuple[int]):
+    pass

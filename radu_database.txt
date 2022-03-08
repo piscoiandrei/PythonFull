@@ -1,9 +1,0 @@
-import mysql.connector as mysql
-__host = "arenacs.go.ro"
-__database = "andrei_db"
-__user = "andrei"
-__password = "987654321"
- # port: 3306
-db_con = mysql.connect(host=__host, database=__database, user=__user, password=__password)
-
-999999999999999999999999999999999999999999999999999999999999999999999999999999
